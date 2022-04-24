@@ -1,0 +1,7 @@
+*  hello.sno
+    output = 'Hello, world!'
+    output = 'Hello, '  "world!"
+    output = 'Hello #' 9
+    output =
+    output = "Goodbye!"
+end

@@ -1,0 +1,23 @@
+GET A SEVEN DIGIT NUMBER FROM THE USER
+NB  ONLY TYPE DIGITS
+
+^aaaaa!aaaaa!*@bb   B IS 48
+^k!^!^-             FIRST DIGIT
+naa!aaa!**          TIMES TEN
+k!^!^-+             SECOND DIGIT
+naa!aaa!**          TIMES TEN
+k!^!^-+             THIRD DIGIT
+naa!aaa!**          TIMES TEN
+k!^!^-+             FOURTH DIGIT
+naa!aaa!**          TIMES TEN
+k!^!^-+             FIFTH DIGIT
+naa!aaa!**          TIMES TEN
+k!^!^-+             SIXTH DIGIT
+naa!aaa!**          TIMES TEN
+k!^!^-+             SEVENTH DIGIT
+@c                  PRINT IT
+^naaa!aaaaaaa!*@aa  B IS 32
+$c$                 PRINT SPACE
+^!!*xc              PRINT A SQUARED
+^$c$                SPACE
+^@!!!**@ec          A CUBED

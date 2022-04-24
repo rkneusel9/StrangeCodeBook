@@ -1,0 +1,7 @@
+hello:proc options(main);
+  declare i fixed binary;
+  do i = 1 to 10;
+    put skip list("Hello, world!");
+  end;
+end hello;
+

@@ -1,0 +1,12 @@
+* Define a function
+        define('poly(a,b,c,x)')            :(epoly)
+poly    poly = a * x ** 2 + b * x + c      :(return)
+epoly
+
+* Main body of the code
+        x = -10
+loop    output = x ' ' poly(1,2,2,x)
+        x = x + 1
+        ge(x,8)                            :f(loop)
+end
+

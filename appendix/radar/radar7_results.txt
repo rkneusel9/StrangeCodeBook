@@ -1,0 +1,22 @@
+
+Minimum MSE: 0.00000000
+
+Program: 697SMW6W99857M662M377242MSI83W35ME2125E1
+
+Target display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 7 0 0]
+ [0 6 0 0 0]
+ [5 0 0 0 0]]
+
+Program display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 7 0 0]
+ [0 6 0 0 0]
+ [5 0 0 0 0]]
+
+Firefly position (4,1)
+(30 particles, 830/500000 iterations, 12 best updates, 24930 function evals, 2.658 sec)
+

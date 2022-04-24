@@ -1,0 +1,22 @@
+
+Minimum MSE: 0.00000000
+
+Program: EWS56MW6DD4D55SIMI115WNS8279ME
+
+Target display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [5 5 0 0 0]
+ [5 5 0 0 0]]
+
+Program display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [5 5 0 0 0]
+ [5 5 0 0 0]]
+
+Firefly position (4,1)
+(30 particles, 492/500000 iterations, GA, 12 best updates, 14790 function evals, 1.350 sec)
+

@@ -1,0 +1,22 @@
+*
+*  Temperature conversion
+*
+menu  output =
+      output = "(1) F to C or (2) C to F, 'q' to quit:"
+      menu = input
+      ident(menu,'2')                     :s(CtoF)
+      ident(menu,'q')                     :s(end)
+
+* F to C
+      output = "Fahrenheit temperature?"
+      F = input
+      C = (5. / 9.) * (F - 32.0)
+      output = F " F = " C " C"           :(menu)
+
+* C to F
+CtoF  output = "Celsius temperature?"
+      C = input
+      F = (9. / 5.) * C + 32.0
+      output = C " C = " F " F"           :(menu)
+end
+

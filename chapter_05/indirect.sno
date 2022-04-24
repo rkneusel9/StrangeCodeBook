@@ -1,0 +1,14 @@
+* An example of indirection
+ cosa1 = 'thing1'
+ cosa2 = 'thing2'
+ $cosa1 = 'mea1'
+ $cosa2 = 'mea2'
+ $thing1 = 'kitu1'
+ $thing2 = 'kitu2'
+ output = cosa1 ' ' cosa2
+ output = thing1 ' ' thing2
+ output = $thing1 ' ' $thing2
+ output = mea1 ' ' mea2
+ output = $$cosa1 ' ' $$cosa2
+end
+

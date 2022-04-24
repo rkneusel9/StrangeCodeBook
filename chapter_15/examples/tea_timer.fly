@@ -1,0 +1,319 @@
+!
+!  file:  tea_timer.fly
+!
+!  A "three minute" tea timer.  Really 3 minutes 20 seconds.
+!
+!  RTK, 01-Sep-2020
+!  Last update: 17-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Set up the screen, four rows of 9
+
+Y       ! show blank memory B while setting up the screen
+WWNN    ! move from (2,2) to (0,0)
+9       ! full power
+EEEES   ! first row
+WWWWS   ! second row
+EEEES   ! third row
+WWWWS   ! fourth row, at (4,0)
+M       ! move mode
+NNNN    ! move to (0,0)
+X       ! screen ready, show memory A
+
+!
+! Start the timer:
+!
+D       ! decrement mode
+
+!   Repeat ten times:
+!       wait one second
+!       dim current location
+! 
+
+! Row 0:
+    ! Col 0:
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPPT ! show for one second, decrement
+        PPPPPPPPPP  ! show for one second
+        MED         ! move to the next column, restore decrement
+    ! Col 1:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 2:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 3:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 4:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MESD       
+
+! Row 1:
+    ! Col 0:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 1:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 2:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 3:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 4:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MESD       
+
+! Row 2:
+    ! Col 0:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 1:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 2:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 3:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 4:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MESD       
+
+! Row 3:
+    ! Col 0:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 1:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 2:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 3:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MED        
+    ! Col 4:
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPPT
+        PPPPPPPPPP 
+        MWWN       
+
+! Timer done, memory A clear
+
+    YA      ! show memory B, draw on A
+    7EM     ! (2,2) = 7
+    N5W     ! (1,3) = 5
+    MW5W    ! (1,1) = 5
+    MN3EM   ! (0,0) = 3
+    EEE3S   ! (0,4) = 3
+    MSSS3W  ! (4,4) = 3
+    MWWW3N  ! (4,0) = 3
+    ME5E    ! (3,1) = 5
+    ME5E    ! (3,3) = 5
+    MNWW    ! at (2,2)
+
+    XB      ! show memory A, draw on B
+    7E5E3S  ! (2,2)=7, (2,3)=5, (2,4)=3
+    MWW5W   ! (3,2)=5
+    MN5W3N  ! (2,1)=5, (2,0)=3
+    MEE5N   ! (1,2)=5
+    3E      ! (0,2)=3
+    MSSSSW  !
+    3W      ! (4,2)=3
+    MNNE    ! to (2,2)
+    1TJI    ! set duration and note
+    Y       ! show memory B
+
+    PTFXPTFYPTFX  ! animate for ~2 seconds
+    PTFYPTFXPTFY  ! while playing the scale
+    PTFXPTFYPTFX
+    PTFXPTFYPTFX
+    PTFYPTFXPTFY
+    PTFXPTFYPTFX
+    AC      ! showing A, work with A, clear
+
+! Quit
+
+    H
+

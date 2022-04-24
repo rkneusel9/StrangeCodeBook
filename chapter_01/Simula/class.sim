@@ -1,0 +1,64 @@
+comment Basic class definitions;
+
+begin
+    !  Define a Person;
+    class Person;
+    begin
+        text first, last;
+        integer age;
+        procedure Print;
+        begin
+            OutText(first); OutText(" ");
+            OutText(last); OutText(", age");
+            OutInt(age,3); Outimage;
+        end;
+    end;
+
+    !  Pal is a subclass of Person;
+    Person class Pal;
+    begin
+        text nickname;
+        procedure Print;
+        begin
+            OutText(nickname);
+            OutText(" is ");
+            This Pal Qua Person.Print;
+        end;
+    end;
+
+    !  Declare references to class instances;
+    ref(Person) Fred, Barney;
+    ref(Pal) Wilma, Betty;
+
+    !  Now create the instances;
+    Fred :- new Person;
+    Barney :- new Person;
+    Wilma :- new Pal;
+    Betty :- new Pal;
+
+    !  Populate;
+    Fred.first :- "Fred";
+    Fred.last :- "Flintstone";
+    Fred.age := 37;
+
+    Barney.first :- "Barney";
+    Barney.last :- "Rubble";
+    Barney.age := 34;
+    
+    Wilma.first :- "Wilhelmina";
+    Wilma.last :- "Flintstone";
+    Wilma.age := 35;
+    Wilma.nickname :- "Wilma";
+    
+    Betty.first :- "Elizabeth";
+    Betty.last :- "Rubble";
+    Betty.age := 31;
+    Betty.nickname :- "Betty";
+
+    !  And output;
+    Fred.Print;
+    Wilma.Print;
+    Barney.Print;
+    Betty.Print;    
+end
+

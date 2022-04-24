@@ -1,0 +1,15 @@
+"
+"  Loop and decrement
+"
+{ main
+  set,10    " set mem to 10
+  prt       " print it
+  tmx       " mem -> X
+  set,10    " 10 -> mem
+  chr       " newline
+  txm       " X -> mem, restore count
+  dec       " decrement mem
+  tst,n,-6  " if mem != 0, go back six instructions
+  hlt       " end
+}
+

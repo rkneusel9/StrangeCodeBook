@@ -1,0 +1,8 @@
+comment Hello world;
+
+Begin
+    OutText("Hello, world!");
+    OutImage;
+    OutText("How are you today?");
+End
+

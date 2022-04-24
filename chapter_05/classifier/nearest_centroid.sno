@@ -1,0 +1,116 @@
+*
+*  file:  classify.sno
+*
+*  Train and test the iris dataset
+*
+*  RTK, 27-Mar-2021
+*  Last update:  31-Mar-2021
+*
+****************************************************************
+
+****************************************************************
+*  loadfile - Load a data file
+*
+            define('loadfile(name)pat,r,text,c,v')      :(eloadfile)
+loadfile    input('reader', 10, , name)
+            pat = break(' ') . v span(' ')
+            r = 0
+load_l02    text = reader ' '                           :f(load_l00)
+            c = 0
+load_l03    text pat =                                  :f(load_l01)
+            c = c + 1                                   :(load_l03)
+load_l01    r = r + 1                                   :(load_l02)
+load_l00    endfile(10)
+            loadfile = array(r ',' c)
+            input('reader', 10, , name)
+            r = 1
+load_l07    text = reader ' '                           :f(load_l04)
+            c = 1
+load_l06    text pat =                                  :f(load_l05)
+            loadfile[r,c] = 1.0 * v
+            c = c + 1                                   :(load_l06)
+load_l05    r = r + 1                                   :(load_l07)
+load_l04    endfile(10)                                 :(return)
+eloadfile
+
+
+****************************************************************
+*  dist - Euclidean distance
+*
+            define('dist(cent,x,i,j)sum')               :(edist)
+dist        sum = (cent[i,1] - x[j,1]) ** 2
+            sum = sum + (cent[i,2] - x[j,2]) ** 2
+            sum = sum + (cent[i,3] - x[j,3]) ** 2
+            sum = sum + (cent[i,4] - x[j,4]) ** 2
+            dist = sqrt(sum)                            :(return)
+edist
+
+
+****************************************************************
+*  centroids
+*
+            define('centroids(x,y)c,i,counts')          :(ecentroids)
+centroids   centroids = array('3,4')
+            counts = array(3)
+            i = 1
+cen_loop4   c = y[i,1] + 1                              :f(cen_done0)
+            centroids[c,1] = centroids[c,1] + x[i,1]
+            centroids[c,2] = centroids[c,2] + x[i,2]
+            centroids[c,3] = centroids[c,3] + x[i,3]
+            centroids[c,4] = centroids[c,4] + x[i,4]
+            counts[c] = counts[c] + 1
+            i = i + 1                                   :(cen_loop4) 
+cen_done0   i = 1
+cen_loop5   centroids[i,1] = centroids[i,1] / counts[i] :f(return)
+            centroids[i,2] = centroids[i,2] / counts[i]
+            centroids[i,3] = centroids[i,3] / counts[i]
+            centroids[i,4] = centroids[i,4] / counts[i]
+            i = i + 1                                   :(cen_loop5)
+ecentroids
+
+
+****************************************************************
+*  classify
+*
+            define('classify(cent,x,y)d,nc,i,c,star')   :(eclassify)
+classify    nc = 0
+            i = 1
+cl_loop     le(i,50)                                    :f(cl_stats)
+            c = 0; d = dist(cent, x_test, 1, i)
+            c = le(dist(cent, x_test, 2, i), d) 1       :f(cl_next)
+            d = dist(cent, x_test, 2, i)
+cl_next     c = le(dist(cent, x_test, 3, i), d) 2
+            nc = eq(c, y_test[i,1]) nc + 1
+            star = 
+            star = ne(c, y_test[i,1]) ' ***'
+            output = "test " i ": assigned " c ", actual " y_test[i,1] star
+            i = i + 1                                   :(cl_loop)
+cl_stats    output =
+            output = 'accuracy ' (nc / 50.0) ' (' nc ' out of 50 correct)'
+            output =                                    :(return)         
+eclassify
+
+
+****************************************************************
+*  main
+*
+
+*  train and test datasets
+        x_train = loadfile('datasets/iris_train_data.txt')
+        y_train = loadfile('datasets/iris_train_labels.txt')
+        x_test = loadfile('datasets/iris_test_data.txt')
+        y_test = loadfile('datasets/iris_test_labels.txt')
+        
+*  calculate the per class centroids
+        cent = centroids(x_train, y_train)
+        output =
+        output = "Per class centroids:"
+        output = "  0: " cent[1,1] ' ' cent[1,2] ' ' cent[1,3] ' ' cent[1,4]
+        output = "  1: " cent[2,1] ' ' cent[2,2] ' ' cent[2,3] ' ' cent[2,4]
+        output = "  2: " cent[3,1] ' ' cent[3,2] ' ' cent[3,3] ' ' cent[3,4]
+        output = 
+
+*  run the test data against the centroids to select class labels
+        classify(cent, x_test, y_test)
+end
+

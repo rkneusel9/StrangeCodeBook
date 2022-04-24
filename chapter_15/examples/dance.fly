@@ -1,0 +1,129 @@
+!
+!  file:  dance.fly
+!
+!  Dancing animation
+!
+!  RTK, 16-Jan-2021
+!  Last update:  16-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!  Position 1 -- this never changes
+YVA     ! show B, clear A, draw A
+MNN5
+SSSMW
+5SS
+MNNEE
+5SS
+MSE
+5WWWWW
+MWWS    ! end at (2,2)
+
+PPPPP
+
+!  Position 2
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SS
+ME5SMW
+5WWW
+MS5E
+ME      ! end at (2,2)
+
+PPPPP
+
+!  Position 1
+Y       ! show B
+
+PPPPP   ! pause
+
+!  Position 3
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SS
+MEE5E
+MS5EEE
+MS5W
+MW      ! end at (2,2)
+
+PPPPP
+
+!  Position 1
+Y       ! show B
+
+PPPPP
+
+!  Position 4
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SSME
+5EEMS
+5EEE
+MSWW    ! end at (2,2)
+
+PPPPP
+
+!  Position 1
+Y       ! show B
+
+PPPPP
+
+!  Position 5
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SSMS
+5WWW
+MS5E
+MEEE
+5WMW
+
+PPPPP
+
+!  Position 1
+Y       ! show B
+
+PPPPP
+
+!  Position 6
+XZB     ! show A, clear B, draw B
+5NNE
+MES
+5WWWWS
+MSS
+5EMN
+5EME
+5SS
+MWSS
+
+PPPPP
+
+!  Position 1
+Y       ! show B
+
+PPPPP
+
+!  Position 7
+XZB     ! show A, clear B, draw B
+5NNE
+MES
+5WWWWS
+MSE
+5SE
+MEE5N
+MW5N
+MW
+
+PPPPP
+

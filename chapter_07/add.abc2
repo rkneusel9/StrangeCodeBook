@@ -1,0 +1,7 @@
+ADD TWO NUMBERS AND DISPLAY THE RESULT
+
+e             NEWLINE MODE
+aaaaaaaaaa!   10 TO STACK
+bbb!          7 TO STACK
++@c           ADD STACK, PULL TO A AND PRINT
+

@@ -1,0 +1,66 @@
+"
+"  file: sierpinski.filska
+"
+"  Output points that form the Sierpinski triangle.
+"
+"  RTK, 03-Oct-2020
+"  Last updated: 19-Oct-2020
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    set,1       " start at 1,0
+    tmx
+    set,0
+    tmy
+    set,60000   " number of points to output
+    dec
+    tmz
+    jmp,loop
+}
+
+{ loop
+    set,2
+    div,x=xm
+    div,y=ym
+    rnd
+    cmp,0.333333
+    tst,l,10        " RO .. just print
+    cmp,0.666666
+    tst,l,4         " R1
+
+    " R2 ... x <- x + 0.5, y unchanged
+    set,0.5
+    add,x=xm
+    gto,5
+
+    " R1
+    set,0.25
+    add,x=xm
+    set,0.5
+    add,y=ym
+
+    " Print
+    jmp,print
+
+    " Done?
+    tzm
+    dec
+    tst,z,3
+    tmz
+    jpr,loop
+    hlt
+}
+
+{ print
+    txm
+    prt
+    set,32
+    chr chr
+    tym
+    prt
+    set,10
+    chr
+    jmp,loop
+}
+

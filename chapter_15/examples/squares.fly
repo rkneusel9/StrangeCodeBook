@@ -1,0 +1,34 @@
+!
+!  file:  ex0.fly
+!
+!  First Firefly program.
+!
+!  RTK, 23-Aug-2020
+!  Last update:  23-Aug-2020
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Make some squares and animate the buffers
+
+WWNN        ! move from (2,2) to (0,0)
+I           ! set increment mode, memory is all zero
+EEEE        ! move to the right
+SSSS        ! then down
+WWWW        ! then left
+NNNN        ! then back up
+PPPPPPPPPP  ! pause for 1 second
+M           ! switch to move mode, no trail
+B           ! work with buffer B now
+EESS        ! move back to (2,2)
+9           ! set to full intensity
+NNEE        ! move to (0,2) then (0,4)
+SSSS        ! move to (4,4)
+WWNN        ! move to (4,2) then to (2,2)
+YPPPPP      ! show buffer B for 0.5 seconds
+XPPPPP      ! show buffer A for 0.5 seconds
+YPPPPP      ! show buffer B for 0.5 seconds 
+XPPPPP      ! show buffer A
+YC          ! show buffer B, clear it
+
+!  program loops and starts again
+

@@ -1,0 +1,8 @@
+*  Map North American dates to European dates
+        pat = len(2) . month ('/' | '-') len(2) . day ('/' | '-') len(4) . year
+loop    text = input                                            :f(end)
+        text pat = day '/' month '/' year                       :f(bad)
+        output = text                                           :(loop)
+bad     output = "unknown format"                               :(loop)
+end
+

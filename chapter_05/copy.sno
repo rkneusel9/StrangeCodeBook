@@ -1,0 +1,10 @@
+*  Copy a file using the command line
+        src = host(2,2)
+        dst = host(2,3)
+        input('read', 10, 'B,4096', src)
+        output('write', 11, 'B', dst)
+loop    write = read                     :f(close)s(loop)
+close   endfile(10)
+        endfile(11)
+end
+

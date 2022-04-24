@@ -1,0 +1,15 @@
+#  Ask for two ints and report their relationship #
+( print("enter an integer: ");
+  INT a = read int;
+  print("now enter another integer: ");
+  INT b = read int;
+  IF (a > b) THEN
+    print((a, " is greater than ", b, new line))
+  ELSE 
+    IF (b > a) THEN
+      print((b, " is greater than ", a, new line))
+    ELSE
+      print((a, " is equal to ", b, new line))
+    FI
+  FI )
+

@@ -1,0 +1,16 @@
+;
+;  file: collatz.frac
+;
+;  While not yet proven, the following sequence, for any integer, n, always
+;  ends with one:
+;
+;  x0 = n
+;  x_{i+1} = x_i//2 if x_i even, otherwise 3*x_i+1 if x_i is odd
+;
+;  Input: 2**n
+;  Output: 2**1 and halts, or runs forever if you happend to find a counterexample (good luck)
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+165/14 11/63 38/21 13/7 34/325 1/13 184/95 1/19 7/11 13/17 19/23 1575/4
+

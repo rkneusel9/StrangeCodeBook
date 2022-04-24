@@ -1,0 +1,143 @@
+!
+!  file:  fly_time.fly
+!
+!  Count 1000 seconds, then roll over
+!
+!  RTK, 03-Jan-2021
+!  Last update: 03-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+NNEE            ! move to (0,4)
+I               ! increment mode
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MEI             ! move back, set increment mode
+
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+PPPPPPPPPPT     ! one second and increment
+MWIT            ! move over one and increment
+MWIT            ! move over one more and increment
+MEEI            ! move back, set increment mode
+

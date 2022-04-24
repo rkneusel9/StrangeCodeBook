@@ -1,0 +1,99 @@
+!
+!  file:  ball.fly
+!
+!  Animate a "ball"
+!
+!  RTK, 21-Jan-2021
+!  Last update:  21-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!  Position 1
+YVA
+9MNW145NM425WSWMSII12D678I97M8
+MWW
+
+PP
+
+!  Position 2
+XZB
+2I6M5IN9I2499W5989D5E775S5WS45
+MNE     ! Firefly position (3,1)
+
+PP
+
+!  Position 3
+YVA
+D83281S355NESW89794M6M92926D47
+MN      ! Firefly position (3,2)
+
+PP
+
+!  Position 4
+XZB
+57M9MEMS78I4M46MS6M95D5E5N25WS
+MNNW    ! Firefly position (4,3)
+
+PP
+
+!  Position 5
+YVA
+MDIMS5E5S5SMW55NS749I4MD3250W9
+MSSE    ! Firefly position (0,1)
+
+PP
+
+!  Position 6
+XZB
+W3540SESWM735MII75N3298525ES5S
+MSS     ! Firefly position (0,2)
+
+PP
+
+!  Position 7
+YVA
+EWS56MW6DD4D55SIMI115WNS8279ME
+MENN    ! Firefly position (4,1)
+
+PP
+
+
+!  Position 8
+XZB
+89MDM4I972S5WEM57D5N5645WW2I4I
+MEE     ! Firefly position (2,0)
+
+PP
+
+
+!  Position 9
+YVA
+2D764I319D9112615NEI7876SMM5NE
+MSWW    ! Firefly position (1,4)
+
+PP
+
+
+!  Position 10
+XZB
+1835MEN5ENW4S97D46NIS678DDSM68
+MW      ! Firefly position (2,3)
+
+PP
+
+
+!  Position 11
+YVA
+56647MN5E587795NWNMNNS5I331334
+MN      ! Firefly position (3,2)
+
+PP
+
+!  Position 12
+XZB
+78MNM4WN7E4MI85S94715W6N15S25S
+ME      ! Firefly position (2,1)
+
+PP
+
+

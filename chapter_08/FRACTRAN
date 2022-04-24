@@ -1,0 +1,2 @@
+racket -f FRACTRAN.scm $1 $2 $3
+

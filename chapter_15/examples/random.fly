@@ -1,0 +1,20 @@
+!
+!  file:  random.fly
+!
+!  Random firefly.
+!
+!  RTK, 31-Aug-2020
+!  Last update:  31-Aug-2020
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+WWNN        ! move to (0,0)
+R           ! set random mode
+EEEES       ! random row 0
+WWWWS       ! random row 1
+EEEES       ! random row 2
+WWWWS       ! random row 3
+EEEES       ! random row 4
+
+!  program loops and starts again
+

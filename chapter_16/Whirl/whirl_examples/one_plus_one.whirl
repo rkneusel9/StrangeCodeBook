@@ -1,0 +1,24 @@
+one plus one
+
+00 - run ops.noop, switch to math ring
+0 - math::ccw
+11 - rotate to math.not
+00 - run math.not, switch to ops ring
+00 - run ops.noop, switch to math ring
+0 - math::cw
+1111 - rotate to math.store
+00 - run math.store, switch to ops ring
+00 - run ops.noop, switch to math ring
+1 - rotate to math.add
+00 - run math.add, switch to ops ring
+00 - run ops.noop, switch to math ring
+0 - math::ccw
+1 - rotate to math.store
+00 - run math.store, switch to ops ring
+11 - rotate to ops.one
+00 - run ops.one, switch to math ring
+00 - run math.store, switch to ops ring
+0 - ops::ccw
+1111 - rotate to ops.IntIO
+00 - run ops.IntIO, switch to math ring 
+

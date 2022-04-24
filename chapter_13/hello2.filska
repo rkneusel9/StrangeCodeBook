@@ -1,0 +1,129 @@
+"
+"  file: hello2.filska
+"
+"  HELLO, WORLD! polynomial
+"
+"  RTK, 27-Dec-2020
+"  Last update: 27-Dec-2020
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    set,0       " M = 0
+    tmx         " X = M
+    jmp,calc    " Y = f(X)
+    jmp,dump    " dump Y as character
+    inc         " M = M + 1
+    cmp,13      " M == 13?
+    tst,e,2     " yes, done
+    gto,-6      " no, loop
+    set,10      " done
+    chr
+    hlt
+}
+
+{ dump tym chr jmp,main }
+
+{ calc
+    " Y = P0*X**12
+    set,12
+    tmz
+    pow,z=xz
+    set,-4.6431994663395692e-05
+    mul,y=mz
+
+    " Y += P1*X**11
+    set,11
+    tmz
+    pow,z=xz
+    set,3.2633752799095354e-03
+    mul,m=mz
+    add,y=my
+
+    set,10
+    tmz
+    pow,z=xz
+    set,-1.0079445322316360e-01
+    mul,m=mz
+    add,y=my
+
+    set,9
+    tmz
+    pow,z=xz
+    set,1.7997278464174311e+00
+    mul,m=mz
+    add,y=my
+
+    set,8
+    tmz
+    pow,z=xz
+    set,-2.0561041293073888e+01
+    mul,m=mz
+    add,y=my
+
+    set,7
+    tmz
+    pow,z=xz
+    set,1.5712412821126304e+02
+    mul,m=mz
+    add,y=my
+
+    set,6
+    tmz
+    pow,z=xz
+    set,-8.1556740929381863e+02
+    mul,m=mz
+    add,y=my
+
+    set,5
+    tmz
+    pow,z=xz
+    set,2.8598281210109303e+03
+    mul,m=mz
+    add,y=my
+
+    set,4
+    tmz
+    pow,z=xz
+    set,-6.5979225156803523e+03
+    mul,m=mz
+    add,y=my
+
+    set,3
+    tmz
+    pow,z=xz
+    set,9.4649124982355879e+03
+    mul,m=mz
+    add,y=my
+
+    set,2
+    tmz
+    pow,z=xz
+    set,-7.5173478664143449e+03
+    mul,m=mz
+    add,y=my
+
+    set,1
+    tmz
+    pow,z=xz
+    set,2.4648319340174303e+03
+    mul,m=mz
+    add,y=my
+
+    " Y += P12*X**0
+    set,0
+    tmz
+    pow,z=xz
+    set,7.2000000563347072e+01
+    mul,m=mz
+    add,y=my
+    
+    " Y = floor(Y+0.5)
+    set,0.5
+    add,m=my
+    flr
+    tmy
+
+    jmp,main
+}
+

@@ -1,0 +1,4 @@
+*  hello forever
+loop    output = "You say goodbye and I say hello"    :(loop)
+end
+

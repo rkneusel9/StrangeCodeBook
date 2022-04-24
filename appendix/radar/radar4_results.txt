@@ -1,0 +1,22 @@
+
+Minimum MSE: 0.00000000
+
+Program: 744299818E488E52I4M66I7M1462I5WW7E122IE1
+
+Target display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 7 6 5]
+ [0 0 0 0 0]
+ [0 0 0 0 0]]
+
+Program display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 7 6 5]
+ [0 0 0 0 0]
+ [0 0 0 0 0]]
+
+Firefly position (2,4)
+(30 particles, 937/500000 iterations, 11 best updates, 28140 function evals, 2.844 sec)
+

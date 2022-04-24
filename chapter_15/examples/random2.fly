@@ -1,0 +1,32 @@
+!
+!  file:  random2.fly
+!
+!  Random firefly w/double buffering.
+!
+!  RTK, 03-Jan-2021
+!  Last update:  03-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+B           ! draw on B, showing A
+WWNN        ! move to (0,0)
+R           ! set random mode
+EEEES       ! random row 0
+WWWWS       ! random row 1
+EEEES       ! random row 2
+WWWWS       ! random row 3
+EEEES       ! random row 4, end at (4,0)
+M           ! move mode
+NNNN        ! move to (0,0)
+
+YA          ! show B, draw on A
+R           ! set random mode
+EEEES       ! random row 0
+WWWWS       ! random row 1
+EEEES       ! random row 2
+WWWWS       ! random row 3
+EEEES       ! random row 4, end at (4,0)
+X           ! show A
+
+!  program loops and starts again
+

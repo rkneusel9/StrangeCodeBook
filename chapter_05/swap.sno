@@ -1,0 +1,21 @@
+* function to swap two variables
+* to pass by reference, use the name operator (.) in the call
+* and dereference ($) in the function
+
+        define('swap(x,y)t')        :(eswap)
+swap    t = $x
+        $x = $y
+        $y = t                      :(return)
+eswap
+
+        a = 3
+        b = 5
+        output = "a = " a ", b = " b
+        swap(a,b)
+        output = "a = " a ", b = " b
+        swap(.a,.b)
+        output = "a = " a ", b = " b
+        swap('a','b')
+        output = "a = " a ", b = " b
+end
+

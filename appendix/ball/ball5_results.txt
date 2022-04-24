@@ -1,0 +1,22 @@
+
+Minimum MSE: 0.00000000
+
+Program: W3540SESWM735MII75N3298525ES5S
+
+Target display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 5 5 0 0]
+ [0 5 5 0 0]]
+
+Program display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 5 5 0 0]
+ [0 5 5 0 0]]
+
+Firefly position (0,2)
+(30 particles, 1917/500000 iterations, GA, 13 best updates, 57540 function evals, 5.440 sec)
+

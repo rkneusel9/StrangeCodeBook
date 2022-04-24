@@ -1,0 +1,18 @@
+*
+*  Convert from Alice to Bob
+*
+*  snobol4 alice.sno <alice.txt >bob.txt
+*
+        p = null | any(' .,?!)')
+        s = pos(0) | ' ' | '('
+loop    text = input                                :f(end)
+s0      text s . a 'Alice' p . c   = a 'Bob' c      :s(s0)
+s1      text s . a 'her' p . c     = a 'his' c      :s(s1)
+s2      text s . a 'Her' p . c     = a 'His' c      :s(s2)
+s3      text s . a 'herself' p . c = a 'himself' c  :s(s3)
+s4      text s . a 'Herself' p . c = a 'Himself' c  :s(s4)
+s5      text s . a 'she' p . c     = a 'he' c       :s(s5)
+s6      text s . a 'She' p . c     = a 'He' c       :s(s6)
+        output = text                               :(loop)
+end
+

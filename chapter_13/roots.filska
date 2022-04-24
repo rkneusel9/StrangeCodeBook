@@ -1,0 +1,232 @@
+"
+"  file:  roots.filska
+"
+"  Calculate the roots of a quadratic
+"
+"  RTK, 09-Oct-2020
+"  Last update:  09-Oct-2020
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    "  Get a, b, and c
+    jmp,getA
+    jmp,getB
+    jmp,getC
+    
+    "  Calculate D
+    jmp,getA        " X=a
+    set,4           " M=4
+    mul,m=mx        " M = M*X  (4a)
+    jmp,getC        " X=c
+    mul,m=mx        " M = M*X  (4ac)
+    neg             " M = -M   (-4ac)
+    tmz             " Z = M    (-4ac)
+    jmp,getB        " X=b
+    txm             " M=b
+    mul,m=mx        " M = M*X  (b*b)
+    add,m=mz        " M = M+Z  (b*b - 4ac)
+    tmy             " Y = D    (disc)
+    jmp,getA        " X = a
+    txm             " M = X
+    tmz             " Z = M    (a)
+    jmp,getB        " X = b    (b)
+    tym             " M = Y    (disc)
+    cmp,0           " compare(M,0)
+    tst,g,3         " D > 0  --> positive
+    tst,e,3         " D == 0 --> equal
+    tst,l,3         " D < 0  --> negative
+    jmp,positive
+    jmp,equal
+    jmp,negative
+}
+
+"
+" Calculate roots w/Z == a, Y == D, X == b
+"
+
+{ positive
+    set,2           " M = 2
+    mul,m=mz        " M = 2a
+    div,m=xm        " M = b/(2a)
+    neg             " M = -b/(2a)
+    jmp,rest        " X = sqr(Y)/(2a)
+    jmp,?double
+    add,y=mx        " Y = M + X    (-b/(2a)+sqr(D)/(2a))
+    jmp,?double
+    sub,y=mx        " Y = M - X    (-b/(2a)-sqrt(D)/(2a))
+    jmp,?double
+}
+
+{ rest
+    set,2
+    mul,x=mz
+    tym
+    sqr
+    div,x=mx
+    jmp,positive
+}
+
+{ ?double
+    set,10 chr
+    set,49 chr
+    set,115 chr
+    set,116 chr
+    set,32 chr
+    set,114 chr
+    set,111 chr chr
+    set,116 chr
+    set,58 chr
+    set,32 chr
+    jmp,positive
+    tym
+    prt
+    set,10 chr
+    set,50 chr
+    set,110 chr
+    set,100 chr
+    set,32 chr
+    set,114 chr
+    set,111 chr chr
+    set,116 chr
+    set,58 chr
+    set,32 chr
+    jmp,positive
+    tym
+    prt
+    set,10 chr
+    hlt
+}
+
+{ equal
+    set,2           " M = 2
+    mul,m=mz        " M = 2a
+    div,m=xm        " M = b/(2a)
+    neg             " M = -b/(2a)
+    jmp,?single
+    prt             " print single root
+    set,10
+    chr
+    hlt
+}
+
+{ ?single
+    set,10 chr
+    set,79 chr
+    set,110 chr
+    set,101 chr
+    set,32 chr
+    set,114 chr
+    set,111 chr chr
+    set,116 chr
+    set,58 chr
+    set,32 chr
+    jmp,equal
+}
+
+{ negative
+    set,2           " M = 2
+    mul,m=mz        " M = 2a
+    div,m=xm        " M = b/(2a)
+    neg             " M = -b/(2a)
+    swp,mz          " M <--> Z
+    jmp,stash
+    swp,mz          " M <--> Z
+    jmp,resti       " X = sqr(-Y)/(2a)
+    jmp,?imag       " '1st root: '
+    prt
+    set,43 chr
+    txm
+    prt
+    set,105 chr
+    set,10 chr
+    jmp,?imag       " '2nd root: '
+    jmp,stash
+    tzm
+    prt
+    set,45 chr
+    txm
+    prt
+    set,105 chr
+    set,10 chr
+    hlt
+}
+
+{ stash
+    tzm
+    jmp,negative
+    tmz
+    jmp,negative
+}
+
+{ ?imag
+    " 'Complex roots: '
+    set,10 chr
+    set,67 chr
+    set,111 chr
+    set,109 chr
+    set,112 chr
+    set,108 chr
+    set,101 chr
+    set,120 chr
+    set,32 chr
+    set,114 chr
+    set,111 chr chr
+    set,116 chr
+    set,115 chr
+    set,58 chr
+    set,32 chr
+    jmp,negative
+    " '               '
+    set,32
+    chr chr chr chr chr
+    chr chr chr chr chr
+    chr chr chr chr chr
+    jmp,negative
+}
+
+{ resti
+    set,2
+    mul,x=mz
+    tym
+    neg
+    sqr
+    div,x=mx
+    jmp,negative
+}
+
+"
+"  Ask for and return a,b, and c
+"
+
+{ getA
+    set,65 chr
+    set,63 chr
+    set,32 chr
+    ipt
+    jmp,main
+    tmx
+    jmp,main
+    gto,-2
+}
+
+{ getB
+    set,66 chr
+    set,63 chr
+    set,32 chr
+    ipt
+    tmx
+    jmp,main
+    gto,-2
+}
+
+{ getC
+    set,67 chr
+    set,63 chr
+    set,32 chr
+    ipt
+    tmx
+    jmp,main
+    gto,-2
+}
+

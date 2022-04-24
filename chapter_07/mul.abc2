@@ -1,0 +1,19 @@
+MULTIPLY TWO NUMBERS
+
+aaaaa!c         5 TO STACK AND PRINT
+aaaaaaaaaaaa
+aaaaaaaaaaaa
+aaa$c           SPACE
+aaaaaaaaaaca    MULT
+bbbbbbbbbbbc    SPACE
+@!aaaaa!$c$     10 TO STACK
+aaaaaaaaaaaa
+aaaaaaaaaaca    SPACE
+aaaaaaaaaaaa
+aaaaaaaaaaaa
+aaaac           EQUAL
+bbbbbbbbbbbb
+bbbbbbbbbbbb
+bbbbbcr$        SPACE
+*@c             MULTIPLY, PULL, PRINT
+

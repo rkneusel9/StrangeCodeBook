@@ -1,0 +1,218 @@
+"
+"  file:  linfit.filska
+"
+"  Least-squares fit a line to a dataset.
+"
+"  RTK, 27-Dec-2020
+"  Last update:  01-Jan-2021
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    " First call initializes the sums
+    jmp,sum
+    jmp,sumx
+    jmp,sumy
+    jmp,sumxy
+    jmp,sumx2
+
+    " Loop to accumulate inputs -- loop ends when -999999 is read for X
+    set,0           " Z=0, accumulate mode
+    tmz             "
+    ipt             " read X
+    cmp,-999999     " data done?
+    tst,e,10        " yes, calculate
+    tmx             " no, move to X register
+    ipt             " read Y
+    tmy             " move to Y register
+
+    jmp,sum         " accumulate the x,y data
+    jmp,sumx
+    jmp,sumy
+    jmp,sumxy
+    jmp,sumx2
+
+    gto,-11         " continue the loop
+
+    " Sums accumulated, calculate A and B
+    set,1           " Z=1, return sums in Y mode
+    tmz
+
+    " numA = (sumx2*sumy - sumx*sumxy)
+    jmp,sumx2       " Y = sumx2
+    tym             " M = sumx2
+    jmp,sumy        " Y = sumy
+    mul,z=my        " Z = sumx2*sumy
+    jmp,sumx        " Y = sumx
+    tym             " M = sumx
+    jmp,sumxy       " Y = sumxy
+    mul,m=my        " M = sumx*sumxy
+    sub,z=zm        " Z = sumx2*sumy - sumx*sumxy
+    jmp,numA        " store in numA
+
+    " numB = (sumxy*sum - sumx*sumy)
+    jmp,sumxy       " Y = sumxy
+    tym             " M = sumxy
+    jmp,sum         " Y = sum
+    mul,z=my        " Z = sumxy*sum
+    jmp,sumx        " Y = sumx
+    tym             " M = sumx
+    jmp,sumy        " Y = sumy
+    mul,m=my        " M = sumx*sumy
+    sub,z=zm        " Z = sumxy*sum - sumx*sumy
+    jmp,numB        " store in numB
+
+    " d = sum*sumx2 - sumx*sumx
+    jmp,sum         " Y = sum
+    tym             " M = sum
+    jmp,sumx2       " Y = sumx2
+    mul,z=my        " Z = sum*sumx2
+    jmp,sumx        " Y = sumx
+    mul,y=yy        " Y = sumx*sumx
+    sub,z=zy        " Z = sum*sumx2 - sumx*sumx
+    jmp,delta       " store in delta
+
+    " A = numA / delta
+    jmp,delta       " Y = delta
+    tym             " M = delta
+    jmp,numA        " Y = numA
+    div,z=ym        " Z = numA/delta
+    set,65          " print it
+    chr
+    set,61
+    chr
+    tzm
+    prt
+    set,10
+    chr
+    
+    " B = numB / delta
+    jmp,delta       " Y = delta
+    tym             " M = delta
+    jmp,numB        " Y = numB
+    div,z=ym        " Z = numB/delta
+    set,66
+    chr
+    set,61
+    chr
+    tzm
+    prt
+    set,10
+    chr
+
+    hlt
+}
+
+"
+"  Helpers for calculating A and B
+"    1st call: store Z, subsequent calls, return value in Y
+"
+{ numA
+    tzm
+    jmp,main
+    tmy
+    jmp,main
+    gto,-2
+}
+
+{ numB
+    tzm
+    jmp,main
+    tmy
+    jmp,main
+    gto,-2
+}
+
+{ delta
+    tzm
+    jmp,main
+    tmy
+    jmp,main
+    gto,-2
+}
+
+"
+"  Accumulate sums and products of X and Y
+"  (Z=0 --> accumulate, Z=1 --> return sum in Y)
+"
+{ sum
+    set,0       " first call: zero sum
+    jmp,main    " and back to main
+    swp,mz      " look at Z stashing M
+    tst,n,5     " return value in Y
+    swp,mz      " restore count
+    inc         " increment
+    jmp,main    " return to main
+    gto,-5      " test again
+    swp,mz      " Z=1, return M in Y from now on
+    tmy         " and put it in Y
+    jmp,main    " and back to main
+    gto,-2      " put sum in Y and return to main
+}
+
+{ sumx 
+    set,0       " first call: zero sum
+    jmp,main    " and back to main
+    swp,mz      " look at Z stashing M
+    tst,n,5     " return value in Y
+    swp,mz      " restore total
+    add,m=mx    " add in X
+    jmp,main    " return to main
+    gto,-5      " test again
+    swp,mz      " Z=1, return M in Y from now on
+    tmy         " and put it in Y
+    jmp,main    " and back to main
+    gto,-2      " put sum in Y and return to main
+}
+
+{ sumy 
+    set,0       " first call: zero sum
+    jmp,main    " and back to main
+    swp,mz      " look at Z stashing M
+    tst,n,5     " return value in Y
+    swp,mz      " restore total
+    add,m=my    " add in Y
+    jmp,main    " return to main
+    gto,-5      " test again
+    swp,mz      " Z=1, return M in Y from now on
+    tmy         " and put it in Y
+    jmp,main    " and back to main
+    gto,-2      " put sum in Y and return to main
+}
+
+{ sumxy
+    set,0       " first call: zero sum
+    jmp,main    " and back to main
+    swp,mz      " look at Z stashing M
+    tst,n,8     " return value in Y
+    swp,mz      " restore total
+    mul,z=xy    " Z <-- X*Y
+    add,z=mz    " Z <-- M + X*Y
+    set,0       " M <-- 0
+    swp,mz      " M <--> Z, restore Z and M
+    jmp,main    " return to main
+    gto,-8      " test again
+    swp,mz      " Z=1, return M in Y from now on
+    tmy         " and put it in Y
+    jmp,main    " and back to main
+    gto,-2      " put sum in Y and return to main
+}
+
+{ sumx2 
+    set,0       " first call: zero sum
+    jmp,main    " and back to main
+    swp,mz      " look at Z stashing M
+    tst,n,8     " return value in Y
+    swp,mz      " restore total
+    mul,z=xx    " Z <-- X*X
+    add,z=mz    " Z <-- M + X*X
+    set,0       " M <-- 0
+    swp,mz      " M <--> Z, restore Z and M
+    jmp,main    " return to main
+    gto,-8      " test again
+    swp,mz      " Z=1, return M in Y from now on
+    tmy         " and put it in Y
+    jmp,main    " and back to main
+    gto,-2      " put sum in Y and return to main
+}
+

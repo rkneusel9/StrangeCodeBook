@@ -1,0 +1,33 @@
+"
+"  file:  hello.filska
+"
+"  HELLO, WORLD!
+"
+"  RTK, 30-Sep-2020
+"  Last update:  30-Sep-2020
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    set,8
+    tmx
+    set,9       mul,x=mx    jmp,dump
+    set,-3      add,x=mx    jmp,dump
+    set,7       add,x=mx    jmp,dump
+    set,0       add,x=mx    jmp,dump
+    set,3       add,x=mx    jmp,dump
+    set,-35     add,x=mx    jmp,dump
+    set,-12     add,x=mx    jmp,dump
+    set,55      add,x=mx    jmp,dump
+    set,-8      add,x=mx    jmp,dump
+    set,3       add,x=mx    jmp,dump
+    set,-6      add,x=mx    jmp,dump
+    set,-8      add,x=mx    jmp,dump
+    set,-35     add,x=mx    jmp,dump
+    set,10
+    chr
+    hlt
+}
+
+{ dump  txm chr jmp,main }
+

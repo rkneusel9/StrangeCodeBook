@@ -1,0 +1,18 @@
+ESTIMATE PI USING RANDOM NUMBERS
+THE FRACTION PRINTED IS PI DIVIDED BY FOUR
+TO GET PI MAKE THE FRACTION A FLOAT AND MULTIPLY BY FOUR
+HAPPY PI DAY
+
+!                                           PUT A ON STACK
+naaaaaaaaaa!!*@!!*@!!*naaaaaaaaaa!*@        A IS 1 BILLION
+r!!*                                        X SQUARED
+naaaaaaaaaa!!*@!!*@!!*naaaaaaaaaa!*@        A IS 1 BILLION
+r!!*                                        Y SQUARED
++                                           XX PLUS YY
+naaaaaaaaaa!!*@!!*@!!*naaaaaaaaaa!*@!!*     10 TO THE 18TH
+<+                                          INC C IF LESS THAN
+^a^                                         INC S
+@!c                                         PRINT C
+naaaaaaaaaa!!+@!!+@aaaaaaa$c$               PRINT SLASH
+^ece^                                       PRINT S
+@l                                          LOOP

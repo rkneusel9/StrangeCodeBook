@@ -1,0 +1,22 @@
+!
+!  file:  hi2.fly
+!
+!  Firefly "Hello, world!" with double buffering
+!
+!  RTK, 04-Jan-2021
+!  Last update:  13-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Y       ! show grid B, drawing on A
+MNNWW5  ! move mode, go to (0,0), intensity to 5
+SSS     ! left side of the "H"
+MNN5    ! up to (1,0)
+EEE     ! crossbar of the "H"
+MNW     ! move to (0,2)
+5SSS    ! right side of the "H"
+MEEN    ! move to (0,4)
+5NNN    ! "I"
+X       ! now show grid A
+L       ! loop -- keeps display on micro:bit
+

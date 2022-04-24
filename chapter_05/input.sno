@@ -1,0 +1,8 @@
+*  A bit of interaction
+again   output = "Name?"
+        name = input
+        output = differ(name, null) "Greetings, " name   :f(again)
+        output = "Shall we play a game?"
+        output = "On second thought, nah"
+end
+

@@ -1,0 +1,11 @@
+* Recursive factorial function
+        define('fact(n)')       :(efact)
+fact    fact = eq(n,0) 1        :s(return)
+        fact = n * fact(n - 1)  :(return)
+efact
+
+    output = "Enter a number:"
+    n = input
+    output = convert(n,'integer') "! = " fact(n)
+end
+

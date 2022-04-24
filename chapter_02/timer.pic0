@@ -1,0 +1,37 @@
+;
+;  Flash an LED using the timer
+;
+
+;  Processor
+p10f200
+
+;  Config
+IntRC_OSC
+WDT_OFF
+CP_OFF
+MCLRE_OFF
+
+equ[ count 0x12 ]
+
+[ main
+  asm{ movwf OSCCAL }     ;  store oscillator calibration value (in W)
+  OSCCAL/0                ;  disable INTOSC/4 on GPIO.2
+  0 GPIO!                 ;  clear GPIO
+  0b00001000 R0->W tris   ;  set GPIO directions
+
+  ;  Clear TMR0 and reset prescaler
+  0 TMR0!  clrwdt 0b11000111 R0->W option
+
+  ;  Loop forever
+  {
+    ;  Wait for the timer to overflow 100 times
+    100 count! {
+        TMR0@ 0if
+          count--  count@ ?0break
+        then
+    }
+
+    ;  Toggle LED
+    if(GPIO^2) GPIO/2 else GPIO^2 then
+  }
+]

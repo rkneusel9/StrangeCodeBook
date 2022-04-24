@@ -1,0 +1,44 @@
+comment Simula's for loop
+        is rather unusual;
+
+begin
+    integer r,t;
+    text s;
+    character c;
+
+    for r:= 1,1, 3 step 3 until 18, -12 do
+    begin
+        OutInt(r,5);     OutText(" ");
+        OutInt(r*r,5);   OutText(" ");
+        OutInt(r*r*r,5); Outimage;
+    end;
+
+    Outimage;
+
+    t := 0;
+    for r:= 1 while (t < 10) do
+    begin
+        OutInt(t,4); Outimage;
+        t := t + r;
+    end;
+
+    Outimage;
+
+    for r:=11 do
+    begin
+        OutText("r is currently ");
+        OutInt(r,2);
+        Outimage;
+    end;
+
+    Outimage;
+
+    s :- Blanks(4);
+    for c := 'A','B','C','D' do
+    begin
+        s.PutChar(c);
+        OutText(s);
+        Outimage;
+    end
+end
+

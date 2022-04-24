@@ -1,0 +1,9 @@
+python3 fly_swarm.py radar/radar0.txt 30 40 500000 >radar/radar0_results.txt
+python3 fly_swarm.py radar/radar1.txt 30 40 500000 >radar/radar1_results.txt
+python3 fly_swarm.py radar/radar2.txt 30 40 500000 >radar/radar2_results.txt
+python3 fly_swarm.py radar/radar3.txt 30 40 500000 >radar/radar3_results.txt
+python3 fly_swarm.py radar/radar4.txt 30 40 500000 >radar/radar4_results.txt
+python3 fly_swarm.py radar/radar5.txt 30 40 500000 >radar/radar5_results.txt
+python3 fly_swarm.py radar/radar6.txt 30 40 500000 >radar/radar6_results.txt
+python3 fly_swarm.py radar/radar7.txt 30 40 500000 >radar/radar7_results.txt
+

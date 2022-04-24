@@ -1,0 +1,51 @@
+* SNOBOL tables are like Python dictionaries
+
+ data('complex(real,imag)')
+
+* tables default to 10 elements growing by increments of 10
+ t = table()
+ t[1] = 'one'
+ t[2.0] = 'two'
+ t[complex(2,3)] = 'three'
+ c = complex(2,3)
+ t[c] = 'four'
+ output = t[1]
+ output = t[2.0]
+ output = t[complex(2,3)]
+ output = t[c]
+
+* a table with 100 growing by 25
+ z = table(100,25)
+ z['one'] = 1
+ z['two'] = 2
+ z['three'] = 3
+ z[3.14159265] = 'pi'
+ a = array(10)
+ a[7] = z
+ z[a] = a
+
+ output = z['two']
+ output = z[a]
+ output = z[3.14159265]
+* this is just weird
+ output = z[a][7][a][7][a][7][3.14159265]  :(end)
+
+* table to array
+ t = table()
+ t['one'] = 1; t['two'] = 2; t['three'] = 3.3
+ x = convert(t, 'array')
+ i = 1
+loop output = 'key: ' x[i,1] ', value: ' x[i,2]  :f(cont)
+ i = i + 1      :(loop)
+
+* array to table
+cont a = array('3,2')
+ a[1,1] = 'one'; a[1,2] = 1
+ a[2,1] = 'two'; a[2,2] = 2
+ a[3,1] = 'three'; a[3,2] = 3
+ y = convert(a, 'table')
+ output = y['one']
+ output = y['two']
+ output = y['three']
+end
+

@@ -1,0 +1,21 @@
+!
+!  file: scale.fly
+!
+!  Play a simple scale
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+1TJ     ! set note duration
+0TI     ! set first note and increment mode
+TF      ! increment and play note
+TF      ! increment and play note
+TF      ! increment and play note
+TF      ! increment and play note
+TF      ! increment and play note
+TF      ! increment and play note
+TF      ! increment and play note
+5TG     ! set octave to 5 (default is 4)
+8TJ     ! set duration
+1TF     ! play note 1 of octave 5
+H       ! halt
+

@@ -1,0 +1,146 @@
+*
+*  file:  bf.sno
+*
+*  SNOBOL4 implementation of BF
+*
+*  RTK, 04-Jun-2021
+*  Last update:  10-Jun-2021
+*
+****************************************************************
+
+*  Program code, memory, and counter
+
+            MAXPROG = 70000
+            MAXMEM = 30000
+            prog = array('0:' MAXPROG)
+            mem = array('0:' MAXMEM, 0)
+            jump = table()
+
+
+****************************************************************
+*  parse
+*
+            define('parse(name)c,n,pat')                :(eparse)
+parse       pat = break('><+-.,[]')
+            input('reader', 10, 'B,1', name)
+parse_l0    c = reader                                  :f(parse_l1)
+            c pat                                       :f(parse_l0)
+            prog[n] = c
+            n = ne(n,MAXPROG) n + 1                     :s(parse_l0)
+parse_l1    endfile(10)                                 
+            parse = n                                   :(return)
+eparse
+
+
+****************************************************************
+*  closing -- forward to closing ]
+*
+            define('closing(pc,plen)n,p')               :(eclosing)
+closing     n = 1
+            p = pc
+closing_l0  p = p + 1
+            eq(p,plen)                                  :s(bad0)
+            ident(prog[p],']')                          :s(closing_l1)
+            ident(prog[p],'[')                          :s(closing_l2)
+closing_l3  eq(n,0)                                     :f(closing_l0)
+            closing = p                                 :(return)
+closing_l1  n = n - 1                                   :(closing_l3)
+closing_l2  n = n + 1                                   :(closing_l3)
+eclosing
+
+
+****************************************************************
+*  buildtable
+*
+            define('buildtable(plen)n,m')               :(ebuildtable)
+buildtable  n = 0
+build_l0    ident(prog[n],'[')                          :s(build_l1)
+build_l2    n = n + 1
+            eq(n,plen)                                  :f(build_l0)s(return)
+build_l1    m = closing(n,plen)
+            jump[m] = n
+            jump[n] = m                                 :(build_l2)
+ebuildtable
+
+
+****************************************************************
+*  ord
+*
+            define('ord(c)v')                           :(eord)
+ord         &alphabet break(c) . v
+            ord = size(v)                               :(return)
+eord
+
+
+****************************************************************
+*  main
+*
+            differ(host(2,2),'')                        :s(load)
+
+            output =
+            output = 'BF interpreter in SNOBOL4, RTK, 06/2021'
+            output =
+            output = 'use... snobol4 bf.sno <filename>'            
+            output =                                    :(end)
+
+*  parse the input file
+load        plen = parse(host(2,2))
+
+*  build a table of [ and ] positions
+            buildtable(plen)
+
+*  open files for single character I/O
+            input('cin', 10, 'B,1', '-')
+            output('cout', 11, 'WB,1', '-')
+
+*  run the program
+            pc = 0
+            mp = 0
+            gmp = 0
+loop        ident(prog[pc],'-')                         :s(dec)
+            ident(prog[pc],'+')                         :s(inc)
+            ident(prog[pc],'<')                         :s(decp)
+            ident(prog[pc],'>')                         :s(incp)
+            ident(prog[pc],',')                         :s(gchar)
+            ident(prog[pc],'.')                         :s(pchar)
+            ident(prog[pc],'[')                         :s(begin)
+            ident(prog[pc],']')                         :s(again)
+cont        pc = pc + 1
+            ne(pc,plen)                                 :f(pend)s(loop)
+
+dec         mem[mp] = mem[mp] - 1                       :s(cont)f(bad1)
+inc         mem[mp] = mem[mp] + 1                       :s(cont)f(bad1)
+decp        mp = mp - 1                                 :(cont)
+incp        mp = mp + 1                                 
+            gmp = gt(mp,gmp) mp                         :(cont)
+gchar       ch = ord(cin)                               :f(pend)
+            eq(ch,13)                                   :f(gchar0)
+            ch = 10
+            cout = char(ch)
+gchar0      mem[mp] = ch                                :s(cont)f(bad1)
+pchar       cout = char(mem[mp])                        :s(cont)f(bad1)
+begin       pc = eq(mem[mp],0) jump[pc]                 :(cont)
+again       pc = ne(mem[mp],0) jump[pc]                 :(cont)
+
+*  dump memory
+pend        ident(host(2,3),'dump')                     :f(end)
+            output =
+            output = 'Memory: (mp = ' mp ')'
+            n = 0
+ploop       ascii = ''
+            gt(mem[n],31)                               :f(print)
+            lt(mem[n],127)                              :f(print)
+            ascii = '  ' char(mem[n])
+print       s = dupl(' ', 6 - size(n)) n 
+            s = s ':' dupl(' ', 6 - size(mem[n])) mem[n] 
+            output = s ascii
+            n = n + 1
+            gt(n,gmp)                                   :f(ploop)
+            output =                                    :(end)
+
+*  error
+bad0        output = 'ran out of program looking for ] (' pc ')'  :(end)
+bad1        output = 'memory access error, mp = ' mp              :(end)
+
+end
+

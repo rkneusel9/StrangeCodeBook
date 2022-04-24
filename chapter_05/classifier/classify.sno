@@ -1,0 +1,106 @@
+*
+*  file:  classify.sno
+*
+*  Classify a dataset with a 1-NN classifier
+*
+*  RTK, 27-Mar-2021
+*  Last update:  31-Mar-2021
+*
+****************************************************************
+
+****************************************************************
+*  samples - return the number of samples in an array
+*
+            define('samples(a)pat')                     :(esamples)
+samples     pat = break(',') . samples
+            prototype(a) pat                            :(return)
+esamples
+
+
+****************************************************************
+*  features - return the number of features in an array
+*
+            define('features(a)pat')                    :(efeatures)
+features    pat = break(',') ',' rem . features
+            prototype(a) pat                            :(return)
+efeatures
+
+
+****************************************************************
+*  loadfile - Load a data file
+*
+            define('loadfile(name)pat,r,text,c,v')      :(eloadfile)
+loadfile    input('reader', 10, , name)
+            pat = break(' ') . v span(' ')
+            r = 0
+load_l02    text = reader ' '                           :f(load_l00)
+            c = 0
+load_l03    text pat =                                  :f(load_l01)
+            c = c + 1                                   :(load_l03)
+load_l01    r = r + 1                                   :(load_l02)
+load_l00    endfile(10)
+            loadfile = array(r ',' c)
+            input('reader', 10, , name)
+            r = 1
+load_l07    text = reader ' '                           :f(load_l04)
+            c = 1
+load_l06    text pat =                                  :f(load_l05)
+            loadfile[r,c] = 1.0 * v
+            c = c + 1                                   :(load_l06)
+load_l05    r = r + 1                                   :(load_l07)
+load_l04    endfile(10)                                 :(return)
+eloadfile
+
+
+****************************************************************
+*  dist - Euclidean distance
+*
+            define('dist(x,y,i,j)sum,k')                :(edist)
+dist        k = 1
+dist_l00    sum = sum + (x[i,k] - y[j,k]) ** 2          :f(dist_l01)
+            k = k + 1                                   :(dist_l00)
+dist_l01    dist = sqrt(sum)                            :(return)
+edist
+
+
+****************************************************************
+*  nearest - return the label of the nearest training sample
+*
+            define('nearest(xtrn,ytrn,xtst,ytst,idx)s,i,mc,md,d')  :(enearest)
+nearest     i = 1
+            s = samples(xtrn)
+            nearest = ytrn[i,1]
+            md = dist(xtrn, xtst, i, idx)
+near_l01    i = i + 1
+            le(i,s)                                     :f(return)
+            d = dist(xtrn, xtst, i, idx)
+            lt(d,md)                                    :f(near_l01)
+            nearest = ytrn[i,1]
+            md = d                                      :(near_l01)
+enearest
+
+
+****************************************************************
+*  main
+*
+
+*  train and test datasets
+            x_train = loadfile(host(2,2))
+            y_train = loadfile(host(2,3))
+            x_test = loadfile(host(2,4))
+            y_test = loadfile(host(2,5))
+
+*  run the test data against the training to find the nearest neighbor
+            i = 1; nc = 0; n = samples(x_test)
+loop        le(i,n)                                     :f(stats)
+            c = nearest(x_train, y_train, x_test, y_test, i)
+            nc = eq(c, y_test[i,1]) nc + 1
+            star = 
+            star = ne(c, y_test[i,1]) ' **'
+            output = "test " i ": assigned " c ", actual " y_test[i,1] star
+            i = i + 1                                   :(loop)
+stats       output =
+            output = 'accuracy ' (nc / (1.0 * n)) ' (' nc ' out of ' n ' correct)'
+            output =
+end
+

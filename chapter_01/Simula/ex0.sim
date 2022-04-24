@@ -1,0 +1,7 @@
+begin
+    character c;
+    text t;
+    t :- Copy("How now brown cow?");
+    OutInt(t.length,4); Outimage;
+    OutText(t.sub(1,3)); Outimage;
+end

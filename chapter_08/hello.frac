@@ -1,0 +1,15 @@
+;
+;  file:  hello.frac
+;
+;  Program to generate a final state displayed
+;  as 7269767679 == ASCII sequence for HELLO.
+;
+;  RTK, 19-Mar-2021
+;  Last update:  19-Mar-2021
+;
+;  Input:  2^3 5^1 7^1 11^1 == 3080
+;  Output: 72697676794432877982766833
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+3/2 41/5 6701021/7 9800132160937639/11

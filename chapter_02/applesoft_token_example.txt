@@ -1,0 +1,37 @@
+10 FOR X = 1 TO 10
+20 PRINT X, X*X
+30 NEXT X
+
+becomes
+
+0800- 00 0D 08 0A 00 81 58 D0
+0808- 31 C1 31 30 00 18 08 14
+0810- 00 BA 58 2C 58 CA 58 00
+0818- 1F 08 1E 00 82 58 00
+
+execution begins at 0801:
+
+0801: 080D 0A 00 -- line number "10", uint16
+      81 58 D0 31 C1 31 30 00
+      81 token "FOR"
+      58 ASCII character, "X"
+      D0 token "="
+      31 ASCII character, "1"
+      C1 token "TO"
+      31 30 ASCII characters, "10"
+      00 EOLN
+080D: 0818 14 00 -- line number "20", uint16
+      BA token "PRINT"
+      58 ASCII character, "X"
+      2C ASCII character, ","
+      58 ASCII character, "X"
+      CA token "*"
+      58 ASCII character, "X"
+      00 EOLN
+0818: 081F 1E 00 -- line number "30", uint16
+      82 token "NEXT"
+      58 ASCII character, "X"
+      00 EOLN
+081F: 00 00
+
+

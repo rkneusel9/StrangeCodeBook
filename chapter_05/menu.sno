@@ -1,0 +1,20 @@
+* A menu using a computed goto
+loop    output = "Select your entree:"
+        output = "  0) Green eggs and ham"
+        output = "  1) Purple pizza"
+        output = "  2) Plaid tacos"
+        output = "  3) Blue snocone"
+        output = "  4) Quit"
+        menu = input               
+        order = "You ordered "       :($('menu' menu))
+
+menu0   order = order "green eggs and ham"   :(print)
+menu1   order = order "a purple pizza"       :(print)
+menu2   order = order "plaid tacos"          :(print)
+menu3   order = order "a blue snocone"       :(print)
+print   output =
+        output = order
+        output =                             :(loop)
+menu4
+end
+        

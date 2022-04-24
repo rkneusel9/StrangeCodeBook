@@ -1,0 +1,16 @@
+;
+;  file:  mult.frac
+;
+;  Use double loop structure to multiply by repeatedly adding
+;  v2 to v5 v3 times
+;
+;  Input:  2^a 3^b
+;  Output: 5^{ab}
+;
+;  RTK, 22-Mar-2021
+;  Last update:  22-Mar-2021
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+455/22 11/13 1/11 2/7 11/3 1/2
+

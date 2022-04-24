@@ -1,0 +1,47 @@
+!
+!  file: ode.fly
+!
+!  Play "Ode to Joy" showing the notes as played
+!
+!  RTK, 03-Jan-2021
+!  Last update:  16-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+NNWW    ! move to (0,0)
+3TFE    ! E
+3TFE    ! E
+4TFE    ! F
+5TFE    ! G
+5TFEMS  ! G
+4TFE    ! F
+3TFE    ! E
+2TFE    ! D
+1TFE    ! C
+1TFEMS  ! C
+2TFE    ! D
+3TFE    ! E
+3TFE    ! E
+2TFE    ! D
+B8TJ    ! draw on B, showing A
+A2TF    ! draw on A, D8
+CB4TJA  ! clear A, draw on B, set duration, draw on A
+MNNE    ! back to (0,0)
+3TFE    ! E
+3TFE    ! E
+4TFE    ! F
+5TFE    ! G
+5TFEMS  ! G
+4TFE    ! F
+3TFE    ! E
+2TFE    ! D
+1TFE    ! C
+1TFEMS  ! C
+2TFE    ! D
+3TFE    ! E
+2TFE    ! D
+1TFE    ! C
+B8TJ    ! draw on B, showing A
+A1TF    ! draw on A, C8
+H       !
+

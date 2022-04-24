@@ -1,0 +1,23 @@
+ENTER TWO THREE DIGIT NUMBERS AND MULTIPLY THEM
+QUIT IF THE FIRST CHARACTER OF THE FIRST NUMBER IS ESC
+
+^naaaaa!aaaaa!*@bb  B IS 48
+^k!!                FIRST KEYPRESS
+naaa!aaaaaa!*=?q    QUIT IF ESC PRESSED
+@!$c$^!^-           FIRST DIGIT
+naa!aaa!**          TIMES TEN
+k$c$!^!^-+          SECOND DIGIT
+naa!aaa!**          TIMES TEN
+k$c$!^!^-+          THIRD DIGIT
+naaaa!aaaa!*@$c     SPACE
+aaaaaaaaaac         TIMES
+bbbbbbbbbbc$        SPACE
+k$c$!^!^-           FIRST DIGIT
+naa!aaa!**          TIMES TEN
+k$c$!^!^-+          SECOND DIGIT
+naa!aaa!**          TIMES TEN
+k$c$!^!^-+          THIRD DIGIT
+naaaa!aaaa!*@$c     SPACE
+!!+@bbbc            EQUALS
+naaaa!aaaa!*@c$     SPACE
+*@ecel              PRODUCT AND LOOP

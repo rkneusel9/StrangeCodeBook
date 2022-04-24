@@ -1,0 +1,38 @@
+"
+"  file: random.filska
+"
+"  Implement the Park-Miller LCG.  
+"
+"  Filska already cheats and uses Python's Mersenne Twister implementation
+"  for RND, but that's no fun.
+"
+"  a = 48271 (Park-Miller '93)
+"  x_0 = seed (e.g. 8675309)
+"  x_{i+1} = a x_i mod 2^31 - 1
+"  x / (2^31 - 1) --> [0,1)
+"
+"  RTK, 03-Oct-2020
+"  Last update:  03-Oct-2020
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    set,8675309     " the seed
+    tmx
+    set,48271
+    mul,x=mx
+    set,2147483647  " 2^31 - 1
+    mod,x=xm
+    jmp,make_float
+    gto,-5
+}
+
+{ make_float
+    set,2147483647
+    div,m=xm
+    prt
+    set,10
+    chr
+    jmp,main
+}
+

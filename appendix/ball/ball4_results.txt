@@ -1,0 +1,22 @@
+
+Minimum MSE: 0.00000000
+
+Program: MDIMS5E5S5SMW55NS749I4MD3250W9
+
+Target display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 5 5 0]
+ [0 0 5 5 0]]
+
+Program display:
+[[0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 5 5 0]
+ [0 0 5 5 0]]
+
+Firefly position (0,1)
+(30 particles, 1030/500000 iterations, GA, 15 best updates, 30930 function evals, 2.929 sec)
+

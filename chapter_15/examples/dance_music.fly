@@ -1,0 +1,216 @@
+!
+!  file:  dance_music.fly
+!
+!  Dancing animation w/music
+!
+!  RTK, 16-Jan-2021
+!  Last update:  21-Jan-2021
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!  Position 1 -- this never changes
+YVA     ! show B, clear A, draw A
+MNN5
+SSSMW
+5SS
+MNNEE
+5SS
+MSE
+5WWWWW
+MWWS    ! end at (2,2)
+
+5TG4TJ1TF   ! first measure
+2TJ1TF
+4TG1TJ6TF
+5TG1TF
+2TJ0TF
+5TG1TF
+1TF4TG2TJ
+6TF
+
+!  Position 2
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SS
+ME5SMW
+5WWW
+MS5E
+ME      ! end at (2,2)
+
+4TJ5TF      ! second measure
+2TJ5TF
+1TJ3TF
+5TF
+2TJ0TF
+5TF6TF
+5TF
+
+!  Position 1
+Y       ! show B
+
+4TJ4TF      ! third measure
+2TJ4TF
+1TJ3TF2TF
+2TJ0TF
+4TF
+3TF
+2TF
+
+!  Position 3
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SS
+MEE5E
+MS5EEE
+MS5W
+MW      ! end at (2,2)
+
+4TJ5TF      ! fourth measure
+3TG1TJ5TF
+6TF
+0TF
+4TG1TF
+0TF
+2TF
+0TF
+3TF
+2TJ2TF
+1TF
+
+!  Position 1
+Y       ! show B
+
+5TG4TJ1TF   ! first measure
+2TJ1TF
+4TG1TJ6TF
+5TG1TF
+2TJ0TF
+5TG1TF
+1TF4TG2TJ
+6TF
+
+!  Position 4
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SSME
+5EEMS
+5EEE
+MSWW    ! end at (2,2)
+
+4TJ5TF  ! second measure
+2TJ5TF
+1TJ3TF
+5TF
+2TJ0TF
+5TF6TF
+5TF
+
+!  Position 1
+Y       ! show B
+
+4TJ4TF      ! third measure
+2TJ4TF
+1TJ3TF2TF
+2TJ0TF
+4TF
+3TF
+2TF
+
+!  Position 5
+XZB     ! show A, clear B, draw B
+MNN5
+SSSMW
+5SS
+MNNEE
+5SSMS
+5WWW
+MS5E
+MEEE
+5WMW
+
+4TJ5TF      ! fourth measure
+3TG1TJ5TF
+6TF
+0TF
+4TG1TF
+0TF
+2TF
+0TF
+3TF
+2TJ2TF
+1TF
+
+!  Position 1
+Y       ! show B
+
+5TG4TJ1TF   ! first measure
+2TJ1TF
+4TG1TJ6TF
+5TG1TF
+2TJ0TF
+5TG1TF
+1TF4TG2TJ
+6TF
+
+!  Position 6
+XZB     ! show A, clear B, draw B
+5NNE
+MES
+5WWWWS
+MSS
+5EMN
+5EME
+5SS
+MWSS
+
+4TJ5TF      ! second measure
+2TJ5TF
+1TJ3TF
+5TF
+2TJ0TF
+5TF6TF
+5TF
+
+!  Position 1
+Y       ! show B
+
+4TJ4TF      ! third measure
+2TJ4TF
+1TJ3TF2TF
+2TJ0TF
+4TF
+3TF
+2TF
+
+!  Position 7
+XZB     ! show A, clear B, draw B
+5NNE
+MES
+5WWWWS
+MSE
+5SE
+MEE5N
+MW5N
+MW
+
+4TJ5TF      ! fourth measure
+3TG1TJ5TF
+6TF
+0TF
+4TG1TF
+0TF
+2TF
+0TF
+3TF
+2TJ2TF
+1TF
+

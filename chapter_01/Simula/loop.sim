@@ -1,0 +1,29 @@
+comment Simula's for loop
+        which is rather strange;
+
+begin
+    real f;
+    integer r;
+    character c;
+    text t;
+
+    !  Characters use ' ;
+    c := 'A';
+
+    t :- Blanks(100);
+    OutText("Text contains "); OutInt(t.length, 4);
+    OutText(" characters."); Outimage;
+
+    !  Simula has an expressive FOR loop;
+
+    for r:= 6, 9 step 2 until 17, 20 do
+    begin
+        OutInt(r,4);    ! output the integer;
+        OutImage;
+    end;
+
+    f := (9.0/5.0)*100 + 32;
+    OutFix(f,12,16);
+    OutImage
+end
+

@@ -1,0 +1,22 @@
+begin
+    real procedure FtoC(F);
+    real F;
+    begin
+        real C;
+        FtoC := (5.0/9.0)*(F-32);
+    end;
+
+    real C;
+    text t;
+
+    C := FtoC(212.0);
+    OutText("Water boils at "); OutFix(C,3,10); OutText(" C"); Outimage;
+    C := FtoC(32.0);
+    OutText("Water freezes at "); OutFix(C,3,10); OutText(" C"); Outimage;
+
+    t :- Blanks(80);
+    OutText(t); Outimage;
+    t.PutInt(4321);
+    OutText(t); Outimage;
+end
+

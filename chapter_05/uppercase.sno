@@ -1,0 +1,10 @@
+* uppercase a file
+        input('read', 10, 132, host(2,2))
+        output('write', 11, 'W', host(2,3))
+loop    text = read                         :f(close)
+        text = replace(text, &lcase, &ucase)
+        write = text                        :(loop)
+close   endfile(10)
+        endfile(11)
+end
+

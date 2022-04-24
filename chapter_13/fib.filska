@@ -1,0 +1,41 @@
+"
+"  file: fib.filska
+"
+"  Generate the Fibonacci sequence
+"
+"  RTK, 14-Nov-2020
+"  Last update:  19-Nov-2020
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{ main
+    set,78      " number to generate, max for 64-bit float
+    dec         " dec twice, just printing the first two
+    dec
+    tmz         " Z is the counter
+    set,1       " print '1' and '1'
+    tmx         " X holds the i-2 value
+    prt
+    jmp,nl
+    tmy         " Y holds the i-1 value
+    prt 
+    jmp,nl
+    add,m=xy    " find i-th value
+    swp,xy      " X <-- Y, new i-2 value
+    tmy         " Y <-- M, new i-1 value
+    prt         " print i-th value
+    jmp,nl
+    tzm         " decrement Z
+    dec
+    tst,z,3     " if zero, done
+    tmz         " Z <-- M
+    gto,-9      " loop
+    hlt         " quit
+}
+
+{ nl            " print a newline
+    set,10
+    chr
+    jpr,main
+}
+

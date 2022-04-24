@@ -1,0 +1,22 @@
+
+Minimum MSE: 0.00000000
+
+Program: 9MNW145NM425WSWMSII12D678I97M8
+
+Target display:
+[[5 5 0 0 0]
+ [5 5 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]]
+
+Program display:
+[[5 5 0 0 0]
+ [5 5 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]
+ [0 0 0 0 0]]
+
+Firefly position (2,4)
+(30 particles, 1149/500000 iterations, GA, 14 best updates, 34500 function evals, 3.066 sec)
+
