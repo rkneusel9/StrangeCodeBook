@@ -2,8 +2,7 @@
 Software for the book "Strange Code: Esoteric Languages That Make Programming Fun Again"
 available from No Starch Press.
 
-**(02-Oct-2022)** - the videos mentioned in Chapter 15 (Using Firefly) are in progress and will appear in the 
-'videos' directory when ready.
+**(17-Oct-2022)** - the videos are ready, look in the 'videos' directory.
 
 The code is organized by book chapter.  If you find anything missing,
 let me know: rkneuselbooks@gmail.com.
