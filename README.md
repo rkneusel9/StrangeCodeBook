@@ -15,5 +15,5 @@ Nothing is perfect.  Bugs in the book show up here:
 - On page 223 there are three instances that should be $17^{12}$ but rendered as $17^{1}2$.
 
 
-[More Books](http://www.rkneusel.com/)
+<a href="http://www.rkneusel.com" target="_blank">More Books</a>
 
