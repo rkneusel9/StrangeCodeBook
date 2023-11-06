@@ -1,0 +1,74 @@
+Prompt:
+
+Here is a description of a simple esoteric programming language called ABC2.  Each command is a single character and characters not corresponding to a command are ignored by the ABC2 interpreter: a - Increment the accumulator
+b - Decrement the accumulator
+c - Output the accumulator
+
+d - Invert accumulator
+r - Set accumulator to a random number between 0 and accumulator
+n - Set accumulator to 0
+
+$ - Toggle ASCII output mode.  When on, the c instruction prints the accumulator as an ASCII character.
+l - Loop back to the beginning of the program.  Accumulator and ASCII mode does not reset.
+    ^   -- toggle active accumulator (A -> B or vice versa)
+    k   -- get a character from the keyboard (no echo)
+    q   -- quit
+    e   -- toggle newline mode
+    !   -- push accumulator on the stack
+    @   -- pop stack to accumulator
+    g   -- branch from current instruction based on TOS
+    x   -- swap accumulator and TOS
+    ?   -- if TOS false, skip next instruction
+    +,-,*,/,%,<,>,=  -- operations on top two stack items
+                        result on stack
+
+GPT-4:
+
+The ABC2 language you've described is a stack-based esoteric programming language with commands for manipulating a single accumulator, interacting with a stack, and controlling program flow. Here's a summary of the commands:
+
+    a: Increment the accumulator.
+    b: Decrement the accumulator.
+    c: Output the accumulator.
+    d: Invert accumulator (assuming it switches between 1 and 0 or negates the value).
+    r: Set accumulator to a random number between 0 and the current value of the accumulator.
+    n: Set accumulator to 0.
+    $: Toggle ASCII output mode. When on, the c instruction prints the accumulator as an ASCII character.
+    l: Loop back to the beginning of the program. Accumulator and ASCII mode do not reset.
+    ^: Toggle active accumulator (A -> B or vice versa, assuming there are two accumulators).
+    k: Get a character from the keyboard (no echo).
+    q: Quit the program.
+    e: Toggle newline mode (assuming this affects output format).
+    !: Push accumulator on the stack.
+    @: Pop stack to accumulator.
+    g: Branch from current instruction based on Top Of Stack (TOS).
+    x: Swap accumulator and TOS.
+    ?: If TOS is false, skip the next instruction.
+    +: Add top two stack items.
+    -: Subtract top two stack items.
+    *: Multiply top two stack items.
+    /: Divide top two stack items.
+    %: Modulus of top two stack items.
+    <: Less than comparison of top two stack items.
+    >: Greater than comparison of top two stack items.
+    =: Equality comparison of top two stack items.
+
+The operations +, -, *, /, %, <, >, = will manipulate the top two items on the stack and push the result back onto the stack.
+
+If you have a specific ABC2 program or task you'd like to try or understand, let me know and I can help you interpret or execute it.
+
+Prompt:
+
+Now that I've told you how ABC2 works.  Simulate this program in Python and tell me what it outputs: aaa!aaaaaaaa!*@!!!+@aa!
+@!aaaaaaaa!@!aaaaaa!
+@!bbb!@!aaaaaaaa!
+naaaa!aaaa!*@!!!+
+@aaaaaaaaaaaaaaa!
+@!bbb!!bbbbbbb!aaa!
+$@c@c@c@c@c@c@c@c@c@c@ce@c
+
+GPT-4:
+
+<< code in ABC2_GPT4.py generated >>
+
+The output of the ABC2 program, when simulated in Python, is "HELLO WORLD!\n".
+
